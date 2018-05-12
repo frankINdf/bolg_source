@@ -1,0 +1,48 @@
+numpy.random.choice(a, size=None, replace=True, p=None)
+a为数组或数字
+size选中的数量
+replace
+p每个类的权重
+BPR　推荐模型基于贝叶斯理论在先验知识下极大化后验概率，实现从一个用户－项目矩阵训练出多个矩阵，且一个矩阵表示一个用户的项目偏好情况来获得用户多个项目的偏序关系下来进行排名的推荐系统。
+https://blog.csdn.net/qq_27717921/article/details/78197589
+
+model = Model(inputs=[a1, a2], outputs=[b1, b2, b3])
+
+model.layers is a flattened list of the layers comprising the model graph.
+model.inputs is the list of input tensors.
+model.outputs is the list of output tensors.
+compile(self, optimizer, loss=None, metrics=None, loss_weights=None, sample_weight_mode=None, weighted_metrics=None, target_tensors=None)
+
+fit(self, x=None, y=None, batch_size=None, epochs=1, verbose=1, callbacks=None, validation_split=0.0, validation_data=None, shuffle=True, class_weight=None, sample_weight=None, initial_epoch=0, steps_per_epoch=None, validation_steps=None)
+
+predict(self, x, batch_size=None, verbose=0, steps=None)
+
+
+只是想对流经该层的数据做个变换，而这个变换本身没有什么需要学习的参数，那么直接用Lambda Layer是最合适的了。
+
+减去平均值的层
+model.add( Lambda(sub_mean,output_shape=lambda input_shape:input_shape ))
+
+numpy.fliplr(m)[source] #将数组左右翻转
+Flip array in the left/right direction
+
+keras.callbacks.ModelCheckpoint(filepath, monitor='val_loss', verbose=0, save_best_only=False, save_weights_only=False, mode='auto', period=1)
+Save the model after every epoch.
+filepath: string, path to save the model file.
+monitor: quantity to monitor.
+verbose: verbosity mode, 0 or 1.
+save_best_only: if save_best_only=True, the latest best model according to the quantity monitored will not be overwritten.
+mode: one of {auto, min, max}. If save_best_only=True, the decision to overwrite the current save file is made based on either the maximization or the minimization of the monitored quantity. For val_acc, this should be max, for val_loss this should be min, etc. In auto mode, the direction is automatically inferred from the name of the monitored quantity.
+save_weights_only: if True, then only the model's weights will be saved (model.save_weights(filepath)), else the full model is saved (model.save(filepath)).
+period: Interval (number of epochs) between checkpoints.
+
+
+
+keras.callbacks.EarlyStopping(monitor='val_loss', min_delta=0, patience=0, verbose=0, mode='auto')
+monitor: quantity to be monitored.
+min_delta: minimum change in the monitored quantity to qualify as an improvement, i.e. an absolute change of less than min_delta, will count as no improvement.
+patience: number of epochs with no improvement after which training will be stopped.
+verbose: verbosity mode.
+mode: one of {auto, min, max}. In min mode, training will stop when the quantity monitored has stopped decreasing; in max mode it will stop when the quantity monitored has stopped increasing; in auto mode, the direction is automatically inferred from the name of the monitored quantity.
+
+
