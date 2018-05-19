@@ -8,6 +8,8 @@ tags:
 
 在tensorflow中使用滑动平均值可以有效提高计算效率，本文为滑动平均值的学习记录。
 
+<!-- more -->
+
 **计算原理**
 
 TensorFlow中采用`tf.train.ExponentialMovingAverage`函数更新参数，函数每次更新参数后需要和上一轮的变量按照下面公式进行更新：

@@ -6,7 +6,7 @@ tags:
 
 python的pickle模块可以存储python数据文件，本文是该模块的学习记录。
 
-
+<!-- more -->
 
 #### **pickle常用方法**
 

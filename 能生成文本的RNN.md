@@ -6,7 +6,7 @@ tags:
 
 本文是一个RNN文本生成器的实践。
 
-
+<!-- more -->
 
 首先定义一些工具函数，这些函数可以将文本生成字典，并实现向量化。
 
@@ -328,8 +328,8 @@ def build_inputs(self):
             samples.append(c)
     
         return np.array(samples)
-
-
+    
+    
     def load(self, checkpoint):
         self.session = tf.Session()
         self.saver.restore(self.session, checkpoint)

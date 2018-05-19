@@ -8,6 +8,8 @@ tags:
 
 tensorflow模型可以保存为meta文件或者pb文件本文主要是这两种方式的实践。
 
+<!-- more -->
+
 保存为meta后，文件夹会出现4个文件：
 
 `checkpoint`文件保存目录下所有的模型文件列表
