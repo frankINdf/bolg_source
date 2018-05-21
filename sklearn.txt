@@ -1,0 +1,19 @@
+k-flod
+为什么要用：可以将一个数据集分k次验证集和测试集，充分利用数据
+计算验证的混淆矩阵
+使用cross_val_score进行评估
+cross_val_score(model,X,Y,cv=?,scoring = '')
+cv可以用k-flod--将所有样本分成K个不相交的子集
+scoring评价标准，或自己定义
+
+train_test_split(x,y,test_size,radnom_state)
+
+sklearn.pipeline()可以把多个步骤放在一起执行
+
+留一法：？？？
+
+LeaveOneOut()
+LeavePOut()
+ShuffleSplit(n_splits=10, test_size=’default’,
+train_size=None, random_state=None)随机生成验证集
+StratifiedKFold()返回的比例和之前相同
